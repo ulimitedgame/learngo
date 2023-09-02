@@ -97,7 +97,13 @@ var colon = placeholder{
 	" ░ ",
 	"   ",
 }
-
+var dot = placeholder{
+	"   ",
+	"   ",
+	"   ",
+	"   ",
+	" ░ ",
+}
 var digits = [...]placeholder{
 	zero, one, two, three, four, five, six, seven, eight, nine,
 }

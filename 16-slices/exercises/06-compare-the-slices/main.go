@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Compare the slices
 //
@@ -34,6 +40,22 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// namesA := "Da Vinci, Wozniak, Carmack"
-	// namesB := []string{"Wozniak", "Da Vinci", "Carmack"}
+	namesA := "Da Vinci, Wozniak, Carmack, Tesla"
+	namesB := []string{"Wozniak", "Da Vinci", "Carmack", "Hopper"}
+
+	nameC := strings.Split(namesA, ", ")
+	sort.Strings(nameC)
+	sort.Strings(namesB)
+
+	if len(nameC) == len(namesB) {
+		for i := range nameC {
+			if nameC[i] != namesB[i] {
+				fmt.Printf("%s and %s are not equal.", nameC[i], namesB[i])
+				return
+			}
+		}
+		fmt.Printf("They are equal")
+	} else {
+		fmt.Printf("They are not equal. %d != %d", len(nameC), len(namesB))
+	}
 }

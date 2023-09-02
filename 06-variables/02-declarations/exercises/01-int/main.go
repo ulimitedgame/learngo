@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Declare int
 //
@@ -22,4 +24,9 @@ package main
 func main() {
 	// var ? ?
 	// ?
+	var height int
+	var width int
+	height = 10
+	width = 20
+	fmt.Println("height is:", height, "width is:", width)
 }

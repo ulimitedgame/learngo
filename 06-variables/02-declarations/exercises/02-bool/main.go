@@ -22,4 +22,12 @@ package main
 func main() {
 	// var ? ?
 	// ?
+	var isOn bool
+	isOn = false
+	println("isOn is:", isOn)
+	if isOn {
+		println("isOn is true")
+	} else {
+		println("isOn is false")
+	}
 }

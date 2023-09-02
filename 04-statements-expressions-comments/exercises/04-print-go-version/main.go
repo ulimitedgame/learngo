@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"runtime"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Print the Go Version
 //
@@ -16,12 +21,29 @@ package main
 //  3. Print the Go version by calling that func
 //
 // HINT
-//  It's here: https://golang.org/pkg/runtime
+//
+//	It's here: https://golang.org/pkg/runtime
 //
 // EXPECTED OUTPUT
-//  "go1.10"
+//
+//	"go1.10"
+//
 // ---------------------------------------------------------
-
+func showSystemInfo() {
+	fmt.Println("OS\t\t", runtime.GOOS)
+	fmt.Println("ARCH\t\t", runtime.GOARCH)
+	fmt.Println("CPUs\t\t", runtime.NumCPU())
+	fmt.Println("Go Version\t", runtime.Version())
+	fmt.Println("Go Compiler\t", runtime.Compiler)
+	fmt.Println("Go Goroutines\t", runtime.NumGoroutine())
+}
 func main() {
 	// ?
+	fmt.Println(runtime.Version())
+
+	go func() {
+		fmt.Println("hello")
+	}()
+	showSystemInfo()
+
 }

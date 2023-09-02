@@ -10,6 +10,8 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 )
 
 // ---------------------------------------------------------
@@ -38,9 +40,16 @@ import (
 
 func main() {
 	var radius, area float64
+	if len(os.Args) != 2 {
+		fmt.Println("Give me the radius of a sphere")
+		return
+	}
 
 	// ADD YOUR CODE HERE
 	// ...
+	radius, _ = strconv.ParseFloat(os.Args[1], 64)
+
+	area = 4 * 3.14 * radius * radius
 
 	// DO NOT TOUCH THIS
 	fmt.Printf("radius: %g -> area: %.2f\n", radius, area)
